@@ -9,5 +9,8 @@
       "css": ["hide.css"],
       "js": ["hide.js"]
     }
-  ]
+  ],
+  "icons": {
+    "128": "128-icon.png"
+  }
 }
