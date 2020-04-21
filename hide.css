@@ -1,0 +1,13 @@
+/* A class we can inject with javascript based on complex matching. */
+img.hide-trump {
+  filter: brightness(0);
+}
+
+/* Vox.com */
+a[href*="trump"] img {
+  filter: brightness(0);
+}
+
+img[src*="trump"] {
+  filter: brightness(0);
+}
