@@ -9,6 +9,7 @@ if (document.title.toLowerCase().includes('trump')) {
 
 // General text with `Trump`.
 const blacklistedWords = [
+  'Donald Trump',
   'Trump',
 ];
 
