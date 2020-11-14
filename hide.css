@@ -11,3 +11,8 @@ a[href*="trump"] img {
 img[src*="trump"] {
   filter: brightness(0);
 }
+
+span.redacted {
+  color: black;
+  background: black;
+}
