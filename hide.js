@@ -30,7 +30,7 @@ let textNodes = getTextNodes();
 
 textNodes.forEach((el) => {
   disallowedWords.forEach((word) => {
-    const replacement = '*'.repeat(word.length);
+    const replacement = '█'.repeat(word.length);
 
     el.nodeValue = el.nodeValue.replaceAll(word, replacement);
   });
