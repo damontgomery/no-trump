@@ -1,7 +1,7 @@
 {
   "name": "No Trump",
   "version": "0.1",
-  "description": "Get rid of images of Trump from the internet.",
+  "description": "Get rid of images of Trump and others from the internet.",
   "manifest_version": 2,
   "content_scripts": [
     {
