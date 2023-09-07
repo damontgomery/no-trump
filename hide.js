@@ -1,11 +1,10 @@
-// General text with `Trump`.
-const disallowedWords = [
+const disallowedPhrases = [
   'Donald Trump',
   'Trump',
   'Vladimir Putin',
   'Putin',
-  'Musk',
   'Elon Musk',
+  'Musk',
 ];
 
 function getTextNodes() {
@@ -28,27 +27,19 @@ function getTextNodes() {
 
 let textNodes = getTextNodes();
 
-textNodes.forEach((el) => {
-  disallowedWords.forEach((word) => {
+textNodes.forEach((textNode) => {
+  disallowedPhrases.forEach((word) => {
     const replacement = '█'.repeat(word.length);
 
-    el.nodeValue = el.nodeValue.replaceAll(word, replacement);
+    textNode.nodeValue = textNode.nodeValue.replaceAll(word, replacement);
   });
 });
 
-// Vox.com
-if (disallowedWords.some((word) => document.title.toLowerCase().includes(word.toLowerCase()))) {
-  // Hero image.
-  document.querySelectorAll('.e-image--hero img').forEach((el, i) => {
-    el.classList.add('nt-redacted');
-  });
-}
-
 const stylesheet = new CSSStyleSheet();
 
-const singleDisallowedWord = disallowedWords.filter((word) => word.split(' ').length === 1);
+const disallowedWords = disallowedPhrases.filter((word) => word.split(' ').length === 1);
 
-singleDisallowedWord.forEach((word) => {
+disallowedWords.forEach((word) => {
   stylesheet.insertRule(`
     a[href*="${word.toLowerCase()}"] img {
       filter: brightness(0);
@@ -67,3 +58,11 @@ singleDisallowedWord.forEach((word) => {
 });
 
 document.adoptedStyleSheets = [...document.adoptedStyleSheets, stylesheet];
+
+// Vox.com
+if (disallowedPhrases.some((word) => document.title.toLowerCase().includes(word.toLowerCase()))) {
+  // Hero image.
+  document.querySelectorAll('.e-image--hero img').forEach((element) => {
+    element.classList.add('nt-redacted');
+  });
+}
