@@ -51,6 +51,11 @@ disallowedWords.forEach((word) => {
     }
   `)
   stylesheet.insertRule(`
+    img[alt*="${word}"] {
+      filter: brightness(0);
+    }
+  `);
+  stylesheet.insertRule(`
     img[alt*="${word.toLowerCase()}"] {
       filter: brightness(0);
     }
